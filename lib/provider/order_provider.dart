@@ -34,8 +34,32 @@ class OrderProvider with ChangeNotifier {
     return numberOfReturnedOrders;
   }
 
-  static final cards = [
+  static final cardsForPhone = [
     null,
+    CardModel(
+      icon: Assets.shoppingBag,
+      iconcolor: Colors.green,
+      ordersNm: data.length.toString(),
+      text: 'Total number of orders in 2021',
+      circleColor: Colors.greenAccent.withOpacity(0.1),
+    ),
+    CardModel(
+      icon: Assets.average,
+      iconcolor: Colors.blue,
+      ordersNm: OrderProvider().getAvg().toInt().toString() + '\$',
+      text: 'Average price of orders in 2021',
+      circleColor: Colors.blueAccent.withOpacity(0.1),
+    ),
+    CardModel(
+      icon: Assets.returnBox,
+      iconcolor: Colors.red,
+      ordersNm: OrderProvider().getNumberOfReturnedOrders().toString(),
+      text: 'Total number of returned orders in 2021',
+      circleColor: Colors.redAccent.withOpacity(0.1),
+    ),
+  ];
+
+  static final cardsForWeb = [
     CardModel(
       icon: Assets.shoppingBag,
       iconcolor: Colors.green,

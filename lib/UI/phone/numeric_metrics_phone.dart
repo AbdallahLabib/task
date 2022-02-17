@@ -1,22 +1,24 @@
-import 'package:flap_kap/UI/graph_screen.dart';
+import 'package:flap_kap/UI/phone/graph_screen_phone.dart';
 import 'package:flap_kap/model/card_model.dart';
 import 'package:flap_kap/provider/order_provider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class NumericMetrics extends StatefulWidget {
-  const NumericMetrics({Key? key}) : super(key: key);
+class NumericMetricsPhone extends StatefulWidget {
+  const NumericMetricsPhone({Key? key}) : super(key: key);
 
   @override
-  State<NumericMetrics> createState() => _NumericMetricsState();
+  State<NumericMetricsPhone> createState() => _NumericMetricsPhoneState();
 }
 
-class _NumericMetricsState extends State<NumericMetrics> {
+class _NumericMetricsPhoneState extends State<NumericMetricsPhone> {
   final PageController _pageController =
       PageController(initialPage: 1, viewportFraction: 0.7);
 
   double page = 1;
   double pageClamp = 1;
+
+  //int _currentPage = 0;
 
   late Size size;
   double verPos = 0.0;
@@ -79,7 +81,29 @@ class _NumericMetricsState extends State<NumericMetrics> {
                 ),
               ),
             ),
-      body: Stack(
+      body: 
+          /* PageView.builder(
+            controller: _pageController,
+            physics: const ClampingScrollPhysics(),
+            itemCount: OrderProvider.cards.length,
+            onPageChanged: (int index) {
+              setState(() {
+                _currentPage = index;
+              });
+            },
+            itemBuilder: (context, index) {
+              return AnimatedBuilder(
+                animation: _pageController,
+                builder: (context, child) {
+                  return Transform.scale(
+                    scale: _currentPage == index ? 1.3 : 1,
+                    child: CardWidget(order: OrderProvider.cards[index]!),
+                  );
+                },
+              );
+            },
+          ), */
+      Stack(
         children: [
           ///process overview
           Positioned(
@@ -150,30 +174,8 @@ class _NumericMetricsState extends State<NumericMetrics> {
           /// Add card
           AnimatedSwitcher(
             duration: defaultDuration,
-            child: page < 0.3 ? const GraphScreen() : null,
+            child: page < 0.3 ? const GraphScreenPhone() : null,
           ),
-/* 
-          PageView.builder(
-            controller: _pageController,
-            physics: const ClampingScrollPhysics(),
-            itemCount: OrderProvider.cards.length,
-            onPageChanged: (int index) {
-              setState(() {
-                _currentPage = index;
-              });
-            },
-            itemBuilder: (context, index) {
-              return AnimatedBuilder(
-                animation: _pageController,
-                builder: (context, child) {
-                  return Transform.scale(
-                    scale: _currentPage == index ? 1.3 : 1,
-                    child: CardWidget(order: OrderProvider.cards[index]!),
-                  );
-                },
-              );
-            },
-          ), */
 
           /// cards list
           Positioned(
@@ -183,7 +185,7 @@ class _NumericMetricsState extends State<NumericMetrics> {
             right: 0,
             child: PageView(
               controller: _pageController,
-              children: OrderProvider.cards
+              children: OrderProvider.cardsForPhone
                   .map(
                     (e) => e == null
                         ? const SizedBox.shrink()
@@ -198,7 +200,7 @@ class _NumericMetricsState extends State<NumericMetrics> {
                   .toList(),
             ),
           ),
-        ],
+        ], 
       ),
     );
   }
