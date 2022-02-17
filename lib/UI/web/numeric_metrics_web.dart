@@ -203,18 +203,19 @@ class CardWidget extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 20),
-          Text(
-            order.ordersNm!,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: Colors.black.withOpacity(0.7),
-              fontSize: 60,
-              fontWeight: FontWeight.bold,
+          Expanded(
+            child: Text(
+              order.ordersNm!,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.black.withOpacity(0.7),
+                fontSize: 60,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
           const SizedBox(height: 45),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
+          Expanded(
             child: Text(
               order.text!,
               textAlign: TextAlign.center,
