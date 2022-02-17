@@ -1,16 +1,11 @@
-# flap_kap
+# Task
 
-A new Flutter project.
+Show orders data using syncfusion package.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+FirstPage: Some numeric data about the orders: total count, average price and number of returns
+Second Page: howing a graph displaying the number of orders as the Y-axis and time as the X-axis
 
-A few resources to get you started if this is your first Flutter project:
+To open second page, scroll to right.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
