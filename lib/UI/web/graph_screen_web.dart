@@ -14,7 +14,6 @@ class _GraphScreenState extends State<GraphScreenWeb> {
   late TooltipBehavior _tooltipBehavior;
   @override
   void initState() {
-    OrderProvider().getOrdersSalesPerMonth();
     _tooltipBehavior = TooltipBehavior(enable: true);
     super.initState();
   }

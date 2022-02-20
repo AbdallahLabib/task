@@ -33,6 +33,7 @@ class _NumericMetricsWebState extends State<NumericMetricsWeb> {
   @override
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;
+    OrderProvider().getOrders();
     return Scaffold(
       backgroundColor: const Color(0xffF4F7FC),
       appBar: AppBar(

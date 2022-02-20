@@ -37,6 +37,7 @@ class _NumericMetricsPhoneState extends State<NumericMetricsPhone> {
     _pageController.addListener(() {
       pageListener();
     });
+    OrderProvider().getOrders();
     super.initState();
   }
 
@@ -51,6 +52,7 @@ class _NumericMetricsPhoneState extends State<NumericMetricsPhone> {
   @override
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;
+    //
     return Scaffold(
       backgroundColor: const Color(0xffF4F7FC),
       appBar: page < 0.3
@@ -81,7 +83,7 @@ class _NumericMetricsPhoneState extends State<NumericMetricsPhone> {
                 ),
               ),
             ),
-      body: 
+      body:
           /* PageView.builder(
             controller: _pageController,
             physics: const ClampingScrollPhysics(),
@@ -103,7 +105,7 @@ class _NumericMetricsPhoneState extends State<NumericMetricsPhone> {
               );
             },
           ), */
-      Stack(
+          Stack(
         children: [
           ///process overview
           Positioned(
@@ -200,7 +202,7 @@ class _NumericMetricsPhoneState extends State<NumericMetricsPhone> {
                   .toList(),
             ),
           ),
-        ], 
+        ],
       ),
     );
   }

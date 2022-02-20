@@ -14,7 +14,6 @@ class _GraphScreenPhoneState extends State<GraphScreenPhone> {
   late TooltipBehavior _tooltipBehavior;
   @override
   void initState() {
-    OrderProvider().getOrdersSalesPerMonth();
     _tooltipBehavior = TooltipBehavior(enable: true);
     super.initState();
   }
