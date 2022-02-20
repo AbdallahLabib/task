@@ -92,7 +92,7 @@ class OrderProvider with ChangeNotifier {
       for (int i = 0; i < data.length; i++) {
         OrderModel order = OrderModel.fromJson(data[i]);
 
-        if (order.date!.contains('2021-0$j')) {
+        if (order.date!.contains(j < 10 ? '2021-0$j' : '2021-$j')) {
           monthlyOrders++;
         }
         ordersData.add(monthlyOrders);
